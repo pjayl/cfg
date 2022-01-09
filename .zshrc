@@ -134,6 +134,27 @@ alias grf="git reflog";
 alias grh="git reset HEAD~" # last commit
 alias gac="git add . && git commit -a -m "
 alias gsu="git gpush --set-upstream origin "
-#alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
+alias glog="git log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --branches"
 
 alias config='/usr/bin/git --git-dir=/home/pawel/.cfg/ --work-tree=/home/pawel'
+
+## kubernetes
+export KUBECONFIG=~/.kube/config-simple-kube:~/.kube/config
+source <(kubectl completion zsh)
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/pawel/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/pawel/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/pawel/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/pawel/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
+
